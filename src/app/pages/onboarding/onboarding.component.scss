@@ -3,7 +3,7 @@ $primary-color-button: #C67C4E;
 $primary-color-button-hover: #a25c29;
 $text-color: #fff;
 $text-color-second: #A2A2A2;
-$font-family: 'Poppins', sans-serif;
+$font-family: "Sora", sans-serif;
 
 .onboarding-container {
   position: relative;
@@ -48,6 +48,7 @@ $font-family: 'Poppins', sans-serif;
       margin-bottom: 2rem;
       opacity: 0.9;
       color: $text-color-second;
+      font-family: $font-family;
     }
 
     .get-started-btn {
@@ -56,6 +57,7 @@ $font-family: 'Poppins', sans-serif;
       border: none;
       border-radius: 12px;
       width: 100%;
+      font-family: $font-family;
       padding: 16px 16px 16px 16px;
       font-weight: 600;
       font-size: 1rem;

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BannerComponent, CommonModule],
+  imports: [BannerComponent, CommonModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
