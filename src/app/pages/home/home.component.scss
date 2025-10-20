@@ -1,0 +1,217 @@
+// 🎨 Variáveis de estilo
+$color-bg: #f8f7f4;
+$color-primary: #C67C4E;
+$color-accent: #d8b089;
+$color-text: #333;
+$color-muted: #aaa;
+$color-white: #fff;
+$radius: 16px;
+
+// 🔁 Mixin de sombra leve
+@mixin card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-half-screen {
+    background-color: #2e2e2e;
+    height: 280px;
+    padding: 24px;
+    // 🔝 Header
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .location {
+      .label {
+        font-size: 0.75rem;
+        color: $color-muted;
+      }
+
+      h2 {
+        font-size: 1rem;
+        color: $color-white;
+      }
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: $color-white;
+      font-size: 1.3rem;
+    }
+  }
+
+  // 🔍 Seção de busca
+  .search-section {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 0;
+
+    .search-input {
+      flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: #A2A2A2;
+    height: 20px;
+    color: $color-white;
+    }
+
+    .filter-btn {
+    margin-left: 0.6rem;
+    background: $color-primary;
+    border: none;
+    border-radius: 12px;
+    padding: 22px;
+    color: $color-white;
+    }
+  }
+   // 🏷️ Banner promocional
+  .promo-banner-component {
+    position: relative;
+    width: 100%;
+    top: 40px;
+    z-index: 1;
+  }
+
+}
+
+// 🏠 Container principal
+.home-container {
+  background: $color-bg;
+  min-height: 100vh;
+  padding: 95px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  // ☕ Categorias
+  .categories {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      color: $color-text;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: $color-primary;
+        color: $color-white;
+      }
+
+      &:hover {
+        background: lighten($color-primary, 10%);
+        color: $color-white;
+      }
+    }
+  }
+
+  // 🧱 Grid de cafés
+  .coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .coffee-card {
+      background: $color-white;
+      border-radius: $radius;
+      padding: 0.8rem;
+      @include card-shadow;
+
+      .image-container {
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+
+        .rating {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: $color-white;
+          color: $color-primary;
+          font-size: 0.8rem;
+          border-radius: 8px;
+          padding: 0.2rem 0.5rem;
+        }
+      }
+
+      .details {
+        margin-top: 0.6rem;
+
+        h4 {
+          margin: 0;
+          font-size: 1rem;
+          color: $color-text;
+        }
+
+        p {
+          margin: 0;
+          color: $color-muted;
+          font-size: 0.8rem;
+        }
+
+        .price {
+          margin-top: 0.4rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          span {
+            font-weight: bold;
+            color: $color-text;
+          }
+
+          .add-btn {
+            background: $color-primary;
+            color: $color-white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.3rem 0.6rem;
+            transition: background 0.3s ease;
+
+            &:hover {
+              background: darken($color-primary, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 📱 Navegação inferior
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $color-white;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8rem 0;
+    @include card-shadow;
+
+    i {
+      font-size: 1.3rem;
+      color: $color-muted;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &.active,
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

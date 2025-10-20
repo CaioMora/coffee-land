@@ -1,0 +1,37 @@
+$color-bg: #f8f7f4;
+$color-primary: #C67C4E;
+$color-accent: #d8b089;
+$color-text: #333;
+$color-muted: #aaa;
+$color-white: #fff;
+$radius: 16px;
+
+ .promo-banner {
+    background: $color-primary;
+    color: $color-white;
+    border-radius: $radius;
+    padding: 1rem;
+    height: 130px;
+    background: url('../../../assets/banner.png') top/contain no-repeat;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+
+    .tag {
+      background: #e74c3c;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-top: 0.6rem;
+      font-weight: 600;
+      font-size: 1.3rem;
+
+      strong {
+        font-size: 1.4rem;
+      }
+    }
+  }

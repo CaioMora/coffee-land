@@ -1,12 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [BannerComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  cafes = [
+    {
+      nome: 'Caffe Mocha',
+      tipo: 'Deep Foam',
+      preco: 4.53,
+      imagem: "assets/cafe1.png"
+    },
+    {
+      nome: 'Flat White',
+      tipo: 'Espresso',
+      preco: 3.53,
+      imagem: 'assets/cafe2.png'
+    }, 
+     {
+      nome: 'Flat White',
+      tipo: 'Espresso',
+      preco: 3.53,
+      imagem: 'assets/cafe2.png'
+    }
+  ];
 
+  ngOnInit(): void {}
 }
