@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-detail-item',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './detail-item.component.html',
   styleUrl: './detail-item.component.scss'
 })
