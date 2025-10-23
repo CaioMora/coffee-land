@@ -1,0 +1,59 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+.tab-header {
+  display: flex;
+  position: static;
+  overflow-x: auto;
+  background: #EDEDED;
+  border-radius: 10px;
+}
+
+.tab-label {
+  padding: 8px 45px 8px 45px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  margin: 4px;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.tab-label.active {
+  color: #FFF;
+  font-weight: 600;
+  background: #C67C4E;
+}
+
+.tab-label.disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.indicator {
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: transform .28s ease, width .28s ease;
+}
+
+.tab-container {
+  padding: 20px 0;
+}
+
+.tab-content {
+  animation: fade .25s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

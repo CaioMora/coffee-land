@@ -1,0 +1,25 @@
+<nav class="tab-header">
+  <div *ngFor="let tab of tabsList; let i = index"
+       class="tab-label"
+       role="tab"
+       tabindex="0"
+       [class.active]="selectedIndex === i"
+       [class.disabled]="tab.disabled"
+       (click)="selectTab(i)">
+       <span class="icon" *ngIf="tab.icon">{{tab.icon}}</span>
+       <span>{{tab.label}}</span>
+  </div>
+
+  <span class="indicator"
+        [style.width.px]="indicatorWidth"
+        [style.transform]="'translateX(' + indicatorOffset + 'px)'">
+  </span>
+</nav>
+
+<section class="tab-container">
+  <ng-container *ngFor="let tab of tabsList; let i = index">
+      <div class="tab-content" *ngIf="selectedIndex === i">
+        <ng-container *ngTemplateOutlet="tab.template"></ng-container>
+      </div>
+  </ng-container>
+</section>
