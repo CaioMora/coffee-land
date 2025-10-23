@@ -1,0 +1,59 @@
+{
+  "banners": [
+    {
+      "id": 1,
+      "titulo": "Semana do Espresso!",
+      "descricao": "Aproveite 20% de desconto em todos os espressos até domingo!",
+      "imagem": "https://exemplo.com/banners/semana-espresso.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "Promoção de Primavera",
+      "descricao": "Ganhe um mini pão de queijo em compras acima de R$ 30,00.",
+      "imagem": "https://exemplo.com/banners/primavera.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Novidade no cardápio!",
+      "descricao": "Experimente o novo Latte de Baunilha — doçura e aroma em cada gole.",
+      "imagem": "https://exemplo.com/banners/latte-baunilha.jpg"
+    }
+  ],
+  "cafes": [
+    {
+      "id": 1,
+      "nome": "Café Espresso Clássico",
+      "tipo": "Espresso",
+      "descricao": "Um café encorpado com torra média escura, preparado sob alta pressão para extrair um sabor intenso e aroma marcante.",
+      "preco": 9.90
+    },
+    {
+      "id": 2,
+      "nome": "Café Coado Tradicional",
+      "tipo": "Filtrado",
+      "descricao": "Preparado lentamente no filtro de papel, esse café revela notas suaves e equilibradas, ideal para o dia a dia.",
+      "preco": 6.50
+    },
+    {
+      "id": 3,
+      "nome": "Café Gelado com Leite",
+      "tipo": "Gelado",
+      "descricao": "Café espresso misturado com leite gelado e cubos de gelo, perfeito para dias quentes e paladares leves.",
+      "preco": 12.00
+    },
+    {
+      "id": 4,
+      "nome": "Cappuccino Cremoso",
+      "tipo": "Cappuccino",
+      "descricao": "Uma combinação equilibrada de espresso, leite vaporizado e espuma cremosa, finalizado com um toque de cacau.",
+      "preco": 14.50
+    },
+    {
+      "id": 5,
+      "nome": "Latte de Baunilha",
+      "tipo": "Latte",
+      "descricao": "Café espresso suave misturado com leite vaporizado e essência natural de baunilha, levemente adocicado.",
+      "preco": 15.90
+    }
+  ]
+}

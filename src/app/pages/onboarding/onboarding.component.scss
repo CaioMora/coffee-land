@@ -1,0 +1,76 @@
+// 🎨 Variáveis globais
+$primary-color-button: #C67C4E;
+$primary-color-button-hover: #a25c29;
+$text-color: #fff;
+$text-color-second: #A2A2A2;
+$font-family: "Sora", sans-serif;
+
+.onboarding-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: $text-color;
+  font-family: $font-family;
+
+  .background-image {
+    position: absolute;
+    inset: 0;
+    background: url('../../../assets/coffee-bg.png') top/contain no-repeat;
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      z-index: -1;
+    }
+  }
+
+  .content {
+    text-align: center;
+    padding: 24px 24px;
+    max-width: 90%;
+    z-index: 1;
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      color: $text-color-second;
+      font-family: $font-family;
+    }
+
+    .get-started-btn {
+      background-color: $primary-color-button;
+      color: $text-color;
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      font-family: $font-family;
+      padding: 16px 16px 16px 16px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $primary-color-button-hover;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}

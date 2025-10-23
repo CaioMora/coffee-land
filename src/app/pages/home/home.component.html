@@ -1,0 +1,56 @@
+<div class="home-half-screen">
+  <header class="header">
+    <div class="location">
+      <h2>São Paulo, Brasil</h2>
+      <mat-icon class="location-icon" fontIcon="keyboard_arrow_down"></mat-icon>  
+    </div>
+    <button class="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+  <div class="search-section">
+    <mat-icon class="search-icon" aria-hidden="false" aria-label="pesquisar" fontIcon="search"></mat-icon>
+    <input type="text" class="search-input" />
+    <button class="filter-btn">
+      <mat-icon aria-hidden="false" aria-label="Filtrar" fontIcon="filter_list"></mat-icon>
+    </button>
+  </div>
+  <div class="promo-banner-component">
+     <app-banner></app-banner>
+  </div>
+</div>
+<div class="home-container">
+  <!-- Categories -->
+  <div class="categories">
+    <button class="active">Todos</button>
+    <button>Macchiato</button>
+    <button>Latte</button>
+    <button>Americano</button>
+  </div>
+
+  <!-- Coffee Grid -->
+  <div class="coffee-grid">
+    <div class="coffee-card" *ngFor="let cafe of cafes">
+      <div class="image-container">
+        <img [src]="cafe.imagem" [alt]="cafe.nome" />
+        <span class="rating">⭐ 4.8</span>
+      </div>
+      <div class="details">
+        <h4>{{ cafe.nome }}</h4>
+        <p>{{ cafe.tipo }}</p>
+        <div class="price">
+          <span>R$ {{ cafe.preco }}</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="house_none"></mat-icon>
+    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="favorite_none"></mat-icon>
+    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="shopping_bag_none"></mat-icon>
+    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="notifications_none"></mat-icon>
+  </nav>
+</div>
