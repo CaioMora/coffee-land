@@ -1,33 +1,50 @@
+$font-family: "Sora", sans-serif;
+$color-white: #fff;
+$color-primary: #C67C4E;
+
 .order-page {
   background: #fafafa;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  padding: 0px 24px 0px 24px;
   color: #2d2d2d;
-  padding-bottom: 2rem;
 
   .header {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.2rem;
+    justify-content: center; // centraliza o conteúdo (span)
+    padding: 24px 0px 24px 0px;
 
-    mat-icon {
-      font-size: 24px;
-      cursor: pointer;
-      color: #444;
-    }
 
     .title {
       font-weight: 600;
       font-size: 1rem;
     }
+
+    mat-icon {
+      position: absolute;
+      left: 1.2rem; // fixa o ícone à esquerda
+      font-size: 24px;
+      color: #444;
+      cursor: pointer;
+    }
   }
+
+//  .custom-tabs-wrapper {
+//   mat-tab-group {
+//     mat-tab {
+
+//     }
+//   }
+//  }
+
 
   .delivery-options {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
 
     .tab-btn {
       flex: 1;
@@ -43,8 +60,6 @@
   }
 
   .address-section {
-    padding: 0 1.5rem;
-
     h3 {
       font-size: 1rem;
       font-weight: 600;
@@ -88,7 +103,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.5rem;
 
     img {
       width: 60px;
@@ -134,7 +148,6 @@
     background: #fff;
     margin: 1.5rem;
     border-radius: 12px;
-    padding: 0.8rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,7 +168,6 @@
   }
 
   .payment-summary {
-    padding: 0 1.5rem;
 
     h3 {
       font-size: 1rem;
@@ -180,7 +192,6 @@
     background: #fff;
     border-radius: 12px;
     margin: 1.5rem;
-    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -210,14 +221,12 @@
   .order-btn-container {
     display: flex;
     justify-content: center;
-    padding: 0 1.5rem;
 
     .order-btn {
       width: 100%;
       border-radius: 12px;
       background: #b46b3b;
       color: #fff;
-      padding: 1rem;
       font-weight: 600;
       font-size: 1rem;
     }

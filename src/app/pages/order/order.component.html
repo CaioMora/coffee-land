@@ -2,20 +2,17 @@
   <!-- Header -->
   <div class="header">
     <mat-icon>arrow_back</mat-icon>
-    <span class="title">Order</span>
+    <span class="title">Pedido</span>
   </div>
 
-  <!-- Delivery / Pickup Tabs -->
-  <div class="delivery-options">
-    <button
-      mat-flat-button
-      color="primary"
-      class="tab-btn active"
-    >
-      Deliver
-    </button>
-    <button mat-stroked-button class="tab-btn">Pick Up</button>
+ <!-- Delivery / Pickup Tabs -->
+  <div class="custom-tabs-wrapper">
+    <mat-tab-group class="custom-tabs" [(selectedIndex)]="selectedIndex">
+      <mat-tab label="Deliver"></mat-tab>
+      <mat-tab label="Pick Up"></mat-tab>
+    </mat-tab-group>
   </div>
+
 
   <!-- Delivery Address -->
   <div class="address-section">

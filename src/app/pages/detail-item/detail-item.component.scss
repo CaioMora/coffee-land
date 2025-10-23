@@ -1,16 +1,25 @@
+$font-family: "Sora", sans-serif;
+$color-white: #fff;
+$color-primary: #C67C4E;
+
+@mixin card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .coffee-detail {
   background: #fafafa;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
+  font-family: $font-family;
+  padding: 0px 24px 0px 24px;
   color: #2d2d2d;
 
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.2rem;
+    margin: 24px 0px 24px 0px;
 
     .title {
       font-weight: 600;
@@ -27,78 +36,87 @@
   .image-container {
     display: flex;
     justify-content: center;
+    height: 202px;
 
     img {
-      width: 90%;
+      width: 100%;
       border-radius: 1rem;
       object-fit: cover;
     }
   }
 
   .info {
-    flex: 1;
-    padding: 1.5rem;
+    display: flex;
+    margin-top: 16px;
+    .infos-divider{
+        h2 {
+            margin-bottom: 4px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
 
-    h2 {
-      margin: 0.5rem 0 0;
-      font-size: 1.3rem;
-      font-weight: 700;
+        .sub {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          margin-top: 16px;
+          font-size: 0.9rem;
+          font-weight: 600;
+
+        .star {
+            color: #f7b500;
+            margin-right: 4px;
+        }
+
+        .reviews {
+            color: #999;
+            font-weight: 300;
+         }
+        }
     }
 
-    .sub {
-      color: #aaa;
-      font-size: 0.9rem;
-    }
+    .icons-divider {
+        padding: 20px 0px 20px 42px;
+        align-items: center;
+      .icons {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
 
-    .icons {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 0.8rem;
-
-      mat-icon {
-        background: #fff7f0;
-        color: #b46b3b;
-        border-radius: 10px;
-        padding: 6px;
+         mat-icon {
+            background: #f3f3f3;
+            color: $color-primary;
+            border-radius: 10px;
+            padding: 12px;
+        }
       }
     }
-
-    .rating {
-      display: flex;
-      align-items: center;
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-
-      .star {
-        color: #f7b500;
-        margin-right: 4px;
-      }
-
-      .reviews {
-        color: #999;
-      }
-    }
-
-    hr {
+  }
+  hr {
       margin: 1rem 0;
       border: 0;
       border-top: 1px solid #eee;
     }
-
-    .description {
+  .description {
+        margin: 16px 0px 24px 0px;
       h3 {
-        margin-bottom: 0.4rem;
+        margin: 0 !important;
         font-size: 1rem;
         font-weight: 600;
       }
 
       p {
+        margin: 0 !important;
         color: #888;
         font-size: 0.9rem;
         line-height: 1.4;
 
         .read-more {
-          color: #b46b3b;
+          color: $color-primary;
           font-weight: 500;
           cursor: pointer;
         }
@@ -106,10 +124,8 @@
     }
 
     .size {
-      margin-top: 1.2rem;
-
       h3 {
-        margin-bottom: 0.6rem;
+        margin: 24px 0px 16px 0px;
         font-size: 1rem;
         font-weight: 600;
       }
@@ -119,24 +135,36 @@
         gap: 1rem;
 
         .size-btn {
-          border-radius: 10px;
-          width: 45px;
-          height: 40px;
-          font-weight: 500;
+            border-radius: 10px;
+            width: 100%;
+            height: 40px;
+            font-weight: 500;
+            border: none;
+            outline: solid 1px #d5d0d0;
         }
 
         .selected {
-          background-color: #b46b3b;
-          color: #fff;
+          background-color: #EDD6C8;
+          color: $color-primary;
+          border: none;
+          outline: solid 1px $color-primary;
         }
       }
     }
 
     .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 2rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        height: 118px;
+        align-items: center;
+        border-radius: 15px 15px 0px 0px;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.8rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
       .price {
         .label {
@@ -146,17 +174,20 @@
 
         h2 {
           margin: 0;
-          color: #b46b3b;
+          color: $color-primary;
         }
       }
 
       .buy-btn {
-        background-color: #b46b3b;
+        background-color: $color-primary;
         color: #fff;
         border-radius: 12px;
-        padding: 0.8rem 2rem;
+        padding: 16px 40px 16px 40px;
+        width: 217px;
         font-weight: 600;
+        border: none;
+        height: 56px;
+        font-family: $font-family;
       }
     }
-  }
 }
