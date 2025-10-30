@@ -29,22 +29,26 @@
   </div>
 
   <!-- Coffee Grid -->
-  <div class="coffee-grid">
-    <div class="coffee-card" *ngFor="let cafe of cafes">
+  <div class="coffee-grid" *ngIf="coffees$ | async as coffees">
+    <div class="coffee-card" *ngFor="let coffee of coffees">
       <div class="image-container">
-        <img [src]="cafe.imagem" [alt]="cafe.nome" />
-        <span class="rating">⭐ 4.8</span>
+        <img [src]="coffee.photo" [alt]="coffee.name" />
+        <span class="rating">⭐ {{coffee.rating}}</span>
       </div>
       <div class="details">
-        <h4>{{ cafe.nome }}</h4>
-        <p>{{ cafe.tipo }}</p>
+        <h4>{{ coffee.name }}</h4>
+        <p>{{ coffee.type }}</p>
         <div class="price">
-          <span>R$ {{ cafe.preco }}</span>
+          <span>R$ {{ coffee.price }}</span>
           <button class="add-btn">+</button>
         </div>
       </div>
     </div>
   </div>
+
+  <section *ngIf="!(coffees$ | async)">
+    <p>carregando cafés...</p>
+  </section>
 
   <!-- Bottom Nav -->
   <nav class="bottom-nav">
