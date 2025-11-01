@@ -8,43 +8,36 @@
       <i class="fa-solid fa-bars"></i>
     </button>
   </header>
-  <div class="search-section">
-    <mat-icon class="search-icon" aria-hidden="false" aria-label="pesquisar" fontIcon="search"></mat-icon>
-    <input type="text" class="search-input" />
-    <button class="filter-btn">
-      <mat-icon aria-hidden="false" aria-label="Filtrar" fontIcon="filter_list"></mat-icon>
-    </button>
-  </div>
-  <div class="promo-banner-component">
-     <app-banner></app-banner>
-  </div>
 </div>
 <div class="home-container">
   <!-- Categories -->
-  <div class="categories">
-    <button class="active">Todos</button>
-    <button>Macchiato</button>
-    <button>Latte</button>
-    <button>Americano</button>
+  <!-- <app-category-card  [categories]="categories" [selectedCategory]="selectedCategory"></app-category-card> -->
+
+  <div class="promo-banner-component">
+     <app-banner [banners]="banners$ | async"></app-banner>
   </div>
 
   <!-- Coffee Grid -->
-  <div class="coffee-grid">
-    <div class="coffee-card" *ngFor="let cafe of cafes">
+  <div class="coffee-grid" *ngIf="coffees$ | async as coffees">
+    <div class="coffee-card" *ngFor="let coffee of coffees">
       <div class="image-container">
-        <img [src]="cafe.imagem" [alt]="cafe.nome" />
-        <span class="rating">⭐ 4.8</span>
+        <img [src]="coffee.image" [alt]="coffee.name" />
+        <span class="rating">⭐ {{coffee.rating}}</span>
       </div>
       <div class="details">
-        <h4>{{ cafe.nome }}</h4>
-        <p>{{ cafe.tipo }}</p>
+        <h4>{{ coffee.name }}</h4>
+        <p>{{ coffee.type }}</p>
         <div class="price">
-          <span>R$ {{ cafe.preco }}</span>
-          <button class="add-btn">+</button>
+          <span>R$ {{ coffee.price }}</span>
+          <button class="add-btn" (click)="goToDetail(coffee.id)">+</button>
         </div>
       </div>
     </div>
   </div>
+
+  <section *ngIf="!(coffees$ | async)">
+    <p>carregando cafés...</p>
+  </section>
 
   <!-- Bottom Nav -->
   <nav class="bottom-nav">

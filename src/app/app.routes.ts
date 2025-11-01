@@ -8,7 +8,7 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 export const routes: Routes = [
     {path: '', component: OnboardingComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'detail-item', component: DetailItemComponent},
+    {path: 'detail-item/:id', component: DetailItemComponent},
     {path: 'order', component: OrderComponent},
     {path: 'delivery', component: DeliveryComponent}
 ];

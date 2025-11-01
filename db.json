@@ -2,58 +2,103 @@
   "banners": [
     {
       "id": 1,
-      "titulo": "Semana do Espresso!",
-      "descricao": "Aproveite 20% de desconto em todos os espressos até domingo!",
-      "imagem": "https://exemplo.com/banners/semana-espresso.jpg"
+      "title": "Semana do Espresso!",
+      "description": "Aproveite 20% de desconto em todos os espressos até domingo!",
+      "image": "/assets/banners/semana-espresso.jpg"
     },
     {
       "id": 2,
-      "titulo": "Promoção de Primavera",
-      "descricao": "Ganhe um mini pão de queijo em compras acima de R$ 30,00.",
-      "imagem": "https://exemplo.com/banners/primavera.jpg"
-    },
-    {
-      "id": 3,
-      "titulo": "Novidade no cardápio!",
-      "descricao": "Experimente o novo Latte de Baunilha — doçura e aroma em cada gole.",
-      "imagem": "https://exemplo.com/banners/latte-baunilha.jpg"
+      "title": "Promoção de Primavera",
+      "description": "Desconto especial nos cafés da estação!",
+      "image": "/assets/banners/primavera.jpg"
     }
   ],
-  "cafes": [
+   "categories": [
+    { "name": "Arábica", "image": "/assets/categories/arabica.png" },
+    { "name": "Robusta", "image": "/assets/categories/robusta.png" },
+    { "name": "Liberica", "image": "/assets/categories/liberica.png" },
+    { "name": "Excelsa", "image": "/assets/categories/excelsa.png" }
+  ],
+  "coffees": [
     {
       "id": 1,
-      "nome": "Café Espresso Clássico",
-      "tipo": "Espresso",
-      "descricao": "Um café encorpado com torra média escura, preparado sob alta pressão para extrair um sabor intenso e aroma marcante.",
-      "preco": 9.90
+      "name": "Caffe Mocha",
+      "type": "Espresso",
+      "category": "Arábica",
+      "price": 4.53,
+      "image": "/assets/cafe1.png",
+      "rating": 4.5,
+      "reviews": 20
     },
     {
       "id": 2,
-      "nome": "Café Coado Tradicional",
-      "tipo": "Filtrado",
-      "descricao": "Preparado lentamente no filtro de papel, esse café revela notas suaves e equilibradas, ideal para o dia a dia.",
-      "preco": 6.50
+      "name": "Flat White",
+      "type": "Espresso",
+      "category": "Arábica",
+      "price": 3.53,
+      "image": "/assets/cafe2.png",
+      "rating": 4.2,
+      "reviews": 15
     },
     {
       "id": 3,
-      "nome": "Café Gelado com Leite",
-      "tipo": "Gelado",
-      "descricao": "Café espresso misturado com leite gelado e cubos de gelo, perfeito para dias quentes e paladares leves.",
-      "preco": 12.00
+      "name": "Ristretto",
+      "type": "Espresso Forte",
+      "category": "Robusta",
+      "price": 5.00,
+      "image": "/assets/cafe3.png",
+      "rating": 4.7,
+      "reviews": 10
     },
     {
       "id": 4,
-      "nome": "Cappuccino Cremoso",
-      "tipo": "Cappuccino",
-      "descricao": "Uma combinação equilibrada de espresso, leite vaporizado e espuma cremosa, finalizado com um toque de cacau.",
-      "preco": 14.50
+      "name": "Americano",
+      "type": "Filtro",
+      "category": "Robusta",
+      "price": 3.00,
+      "image": "/assets/cafe4.png",
+      "rating": 4.0,
+      "reviews": 8
     },
     {
       "id": 5,
-      "nome": "Latte de Baunilha",
-      "tipo": "Latte",
-      "descricao": "Café espresso suave misturado com leite vaporizado e essência natural de baunilha, levemente adocicado.",
-      "preco": 15.90
+      "name": "Café Geisha",
+      "type": "Especial",
+      "category": "Arábica",
+      "price": 6.50,
+      "image": "/assets/cafe1.png",
+      "rating": 5.0,
+      "reviews": 5
+    },
+    {
+      "id": 6,
+      "name": "Café Liberica",
+      "type": "Especial",
+      "category": "Liberica",
+      "price": 6.00,
+      "image": "/assets/cafe2.png",
+      "rating": 4.8,
+      "reviews": 7
+    },
+    {
+      "id": 7,
+      "name": "Café Excelsa",
+      "type": "Exótico",
+      "category": "Excelsa",
+      "price": 5.80,
+      "image": "/assets/cafe3.png",
+      "rating": 4.6,
+      "reviews": 6
+    },
+    {
+      "id": 8,
+      "name": "Café Bourbon",
+      "type": "Tradicional",
+      "category": "Arábica",
+      "price": 4.90,
+      "image": "/assets/cafe4.png",
+      "rating": 4.4,
+      "reviews": 12
     }
   ]
 }

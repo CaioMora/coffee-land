@@ -1,43 +1,45 @@
 <div class="coffee-detail">
   <!-- Header -->
   <div class="header">
-    <mat-icon>arrow_back</mat-icon>
+    <button class="header-actions" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
     <span class="title">Detail</span>
-    <mat-icon>favorite_border</mat-icon>
+    <button class="header-actions">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
   </div>
 
-  <!-- Image -->
-  <div class="image-container">
-    <img src="assets/cafe1.png" alt="Caffe Mocha" />
-  </div>
 
-  <!-- Info -->
-  <div class="info">
-    <div class="infos-divider">
-      <h2>Caffe Mocha</h2>
-      <span class="sub">Ice/Hot</span>
+  <div class="produt-info" *ngIf="coffee$ | async as coffee">
+    <div class="image-container">
+      <img [src]="coffee.image" [alt]="coffee.name" />
+    </div>
+      <div class="info">
+      <div class="infos-divider">
+        <h2>{{coffee.name}}</h2>
+        <span class="sub">{{coffee.type}}</span>
 
-      <div class="rating">
-        <mat-icon class="star">star</mat-icon>
-        <span>4.8 <span class="reviews">(230)</span></span>
+        <div class="rating">
+          <mat-icon class="star">star</mat-icon>
+          <span>{{coffee.rating}} <span class="reviews">{{coffee.reviews}}</span></span>
+        </div>
+      </div>
+      
+      <div class="icons-divider">
+        <div class="icons">
+        <mat-icon>delivery_dining</mat-icon>
+        <mat-icon>coffee</mat-icon>
+        <mat-icon>local_drink</mat-icon>
+        </div>
       </div>
     </div>
-    
-    <div class="icons-divider">
-      <div class="icons">
-      <mat-icon>delivery_dining</mat-icon>
-      <mat-icon>coffee</mat-icon>
-      <mat-icon>local_drink</mat-icon>
-      </div>
-    </div>
-  </div>
     <hr />
 
     <div class="description">
-      <h3>Description</h3>
+      <h3>Descrição</h3>
       <p>
-        A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and
-        85 ml of fresh milk the fo.. <span class="read-more">Read More</span>
+        {{coffee.description}}
       </p>
     </div>
 
@@ -53,8 +55,9 @@
     <div class="footer">
       <div class="price">
         <span class="label">Preço</span>
-        <h2>R$ 4.53</h2>
+        <h2>R$ {{coffee.price}}</h2>
       </div>
       <button mat-flat-button color="primary" class="buy-btn">Comprar</button>
     </div>
+  </div>
 </div>

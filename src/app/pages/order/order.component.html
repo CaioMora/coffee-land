@@ -7,84 +7,83 @@
 
  <!-- Delivery / Pickup Tabs -->
   <div class="custom-tabs-wrapper">
-    <mat-tab-group class="custom-tabs" [(selectedIndex)]="selectedIndex">
-      <mat-tab label="Deliver"></mat-tab>
-      <mat-tab label="Pick Up"></mat-tab>
-    </mat-tab-group>
+    <app-tabs>
+      <app-tab label="Delivery">Delivery</app-tab>
+      <app-tab label="Retirada">Retirada</app-tab>
+    </app-tabs>
   </div>
 
 
   <!-- Delivery Address -->
   <div class="address-section">
-    <h3>Delivery Address</h3>
-    <p class="address-title">Jl. Kpg Sutoyo</p>
+    <h3>Endereço de entrega</h3>
+    <p class="address-title">Santo André</p>
     <p class="address-sub">
-      Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.
+      R. Conde Juliano, 340 - Vila Humaitá
     </p>
 
-    <div class="address-buttons">
+    <!-- <div class="address-buttons">
       <button mat-stroked-button class="action-btn">
-        <mat-icon>edit_location</mat-icon> Edit Address
+        <mat-icon>edit_location</mat-icon> Editar Endereço
       </button>
       <button mat-stroked-button class="action-btn">
-        <mat-icon>note_add</mat-icon> Add Note
+        <mat-icon>note_add</mat-icon> Adicionar nota
       </button>
-    </div>
+    </div> -->
   </div>
 
   <mat-divider></mat-divider>
 
   <!-- Product -->
   <div class="product">
-    <img src="assets/images/caffe-mocha.jpg" alt="Caffe Mocha" />
+    <img src="assets/cafe1.png" alt="Caffe Mocha" />
     <div class="details">
       <h4>Caffe Mocha</h4>
       <span class="sub">Deep Foam</span>
     </div>
     <div class="quantity">
-      <button mat-icon-button><mat-icon>remove</mat-icon></button>
+      <button class="quantity-button" mat-icon-button><mat-icon>remove</mat-icon></button>
       <span>1</span>
-      <button mat-icon-button><mat-icon>add</mat-icon></button>
+      <button class="quantity-button" mat-icon-button><mat-icon>add</mat-icon></button>
     </div>
   </div>
+
+  <mat-divider></mat-divider>
 
   <!-- Discount -->
   <div class="discount">
     <mat-icon>local_offer</mat-icon>
-    <span>1 Discount is Applies</span>
+    <span>1 Cupom de desconto disponível</span>
     <mat-icon class="arrow">chevron_right</mat-icon>
   </div>
 
   <!-- Payment Summary -->
   <div class="payment-summary">
-    <h3>Payment Summary</h3>
+    <h3>Pagamento</h3>
     <div class="row">
-      <span>Price</span>
-      <span>$ 4.53</span>
+      <span>Preço</span>
+      <span>R$ 4.53</span>
     </div>
     <div class="row">
-      <span>Delivery Fee</span>
+      <span>Taxa de entrega</span>
       <div>
-        <span class="old">$ 2.0</span>
-        <span>$ 1.0</span>
+        <span class="old">R$ 2.0</span>
+        <span>R$ 1.0</span>
       </div>
     </div>
-  </div>
-
-  <!-- Payment Method -->
-  <div class="payment-method">
-    <div class="header-row">
-      <div class="left">
-        <mat-icon>account_balance_wallet</mat-icon>
-        <span>Cash/Wallet</span>
-      </div>
-      <span>$ 5.53</span>
-      <mat-icon>expand_more</mat-icon>
-    </div>
-  </div>
-
+  </div>  
   <!-- Order Button -->
   <div class="order-btn-container">
-    <button mat-flat-button color="primary" class="order-btn">Order</button>
+    <div class="payment-method">
+      <!-- <div class="header-row">
+        <mat-icon>account_balance_wallet</mat-icon>
+        <div class="left">
+          <span>Carteira</span>
+          <span class="payment-value">R$ 5.53</span>
+        </div>
+        <mat-icon>expand_more</mat-icon>
+      </div> -->
+      <button mat-flat-button color="primary" class="order-btn">Pedir</button>
+    </div>
   </div>
 </div>

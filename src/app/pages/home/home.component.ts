@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { BannerComponent } from '../../components/banner/banner.component';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
+import { CoffeeService } from '../../services/coffee.service';
+import { sharedImports } from '../../services/shared/shared-imports';
+import { AsyncPipe, NgForOf } from '@angular/common';
+import { CoffeeViewModel } from '../../viewModels/coffee-viewmodel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BannerComponent, CommonModule, MatIconModule],
+  imports: [
+    sharedImports,
+    AsyncPipe, 
+    NgForOf, 
+    BannerComponent],
+  providers: [CoffeeService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  cafes = [
-    {
-      nome: 'Caffe Mocha',
-      tipo: 'Deep Foam',
-      preco: 4.53,
-      imagem: "assets/cafe1.png"
-    },
-    {
-      nome: 'Flat White',
-      tipo: 'Espresso',
-      preco: 3.53,
-      imagem: 'assets/cafe2.png'
-    }, 
-     {
-      nome: 'Flat White',
-      tipo: 'Espresso',
-      preco: 3.53,
-      imagem: 'assets/cafe2.png'
-    }
-  ];
 
-  ngOnInit(): void {}
+  coffees$ = this.vm.coffees$;
+  banners$ = this.vm.banners$;
+  categories$ = this.vm.categories$;
+
+  constructor(private vm: CoffeeViewModel, private router: Router) {}
+
+  ngOnInit(): void {
+    this.vm.loadData();
+  }
+
+  goToDetail(id: number) {
+    this.router.navigate(['/detail-item', id]);
+  }
+
 }
