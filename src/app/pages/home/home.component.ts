@@ -3,8 +3,8 @@ import { BannerComponent } from '../../components/banner/banner.component';
 import { CoffeeService } from '../../services/coffee.service';
 import { sharedImports } from '../../services/shared/shared-imports';
 import { AsyncPipe, NgForOf } from '@angular/common';
-import { Observable } from 'rxjs';
-import { Coffee } from '../../models/coffees';
+import { CoffeeViewModel } from '../../viewModels/coffee-viewmodel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,12 +20,18 @@ import { Coffee } from '../../models/coffees';
 })
 export class HomeComponent implements OnInit {
 
-  coffees$!: Observable<Coffee[]>;
+  coffees$ = this.vm.coffees$;
+  banners$ = this.vm.banners$;
+  categories$ = this.vm.categories$;
 
-  constructor(private service: CoffeeService) {}
+  constructor(private vm: CoffeeViewModel, private router: Router) {}
 
   ngOnInit(): void {
-    this.coffees$ = this.service.getCoffees();
+    this.vm.loadData();
+  }
+
+  goToDetail(id: number) {
+    this.router.navigate(['/detail-item', id]);
   }
 
 }

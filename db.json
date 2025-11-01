@@ -4,51 +4,101 @@
       "id": 1,
       "title": "Semana do Espresso!",
       "description": "Aproveite 20% de desconto em todos os espressos até domingo!",
-      "image": "https://exemplo.com/banners/semana-espresso.jpg"
+      "image": "/assets/banners/semana-espresso.jpg"
     },
     {
       "id": 2,
       "title": "Promoção de Primavera",
-      "description": "Flores e aromas especiais em cada xícara!",
-      "image": "https://exemplo.com/banners/promo-primavera.jpg"
+      "description": "Desconto especial nos cafés da estação!",
+      "image": "/assets/banners/primavera.jpg"
     }
+  ],
+   "categories": [
+    { "name": "Arábica", "image": "/assets/categories/arabica.png" },
+    { "name": "Robusta", "image": "/assets/categories/robusta.png" },
+    { "name": "Liberica", "image": "/assets/categories/liberica.png" },
+    { "name": "Excelsa", "image": "/assets/categories/excelsa.png" }
   ],
   "coffees": [
     {
       "id": 1,
-      "name": "Espresso Clássico",
-      "price": 9.9,
-      "description": "Sabor intenso e aroma marcante.",
-      "image": "assets/images/espresso-classico.jpg",
-      "rating": 4.7,
-      "photo": "assets/cafe1.png"
+      "name": "Caffe Mocha",
+      "type": "Espresso",
+      "category": "Arábica",
+      "price": 4.53,
+      "image": "/assets/cafe1.png",
+      "rating": 4.5,
+      "reviews": 20
     },
     {
       "id": 2,
-      "name": "Cappuccino Cremoso",
-      "price": 12.5,
-      "description": "Mistura equilibrada de café, leite e espuma.",
-      "image": "assets/images/cappuccino-cremoso.jpg",
-      "rating": 4.9,
-      "photo": "assets/cafe2.png"
+      "name": "Flat White",
+      "type": "Espresso",
+      "category": "Arábica",
+      "price": 3.53,
+      "image": "/assets/cafe2.png",
+      "rating": 4.2,
+      "reviews": 15
     },
     {
       "id": 3,
-      "name": "Latte Suave",
-      "price": 10.9,
-      "description": "Combinação perfeita de café e leite vaporizado.",
-      "image": "assets/images/latte-suave.jpg",
-      "rating": 4.6,
-      "photo": "assets/cafe3.png"
+      "name": "Ristretto",
+      "type": "Espresso Forte",
+      "category": "Robusta",
+      "price": 5.00,
+      "image": "/assets/cafe3.png",
+      "rating": 4.7,
+      "reviews": 10
     },
     {
       "id": 4,
-      "name": "Mocha Especial",
-      "price": 13.5,
-      "description": "Café com chocolate e um toque de chantilly.",
-      "image": "assets/images/mocha-especial.jpg",
+      "name": "Americano",
+      "type": "Filtro",
+      "category": "Robusta",
+      "price": 3.00,
+      "image": "/assets/cafe4.png",
+      "rating": 4.0,
+      "reviews": 8
+    },
+    {
+      "id": 5,
+      "name": "Café Geisha",
+      "type": "Especial",
+      "category": "Arábica",
+      "price": 6.50,
+      "image": "/assets/cafe1.png",
+      "rating": 5.0,
+      "reviews": 5
+    },
+    {
+      "id": 6,
+      "name": "Café Liberica",
+      "type": "Especial",
+      "category": "Liberica",
+      "price": 6.00,
+      "image": "/assets/cafe2.png",
       "rating": 4.8,
-      "photo": "assets/cafe4.png"
+      "reviews": 7
+    },
+    {
+      "id": 7,
+      "name": "Café Excelsa",
+      "type": "Exótico",
+      "category": "Excelsa",
+      "price": 5.80,
+      "image": "/assets/cafe3.png",
+      "rating": 4.6,
+      "reviews": 6
+    },
+    {
+      "id": 8,
+      "name": "Café Bourbon",
+      "type": "Tradicional",
+      "category": "Arábica",
+      "price": 4.90,
+      "image": "/assets/cafe4.png",
+      "rating": 4.4,
+      "reviews": 12
     }
   ]
 }

@@ -5,5 +5,7 @@ export interface Coffee {
     description: string;
     price: number; 
     rating: number;
-    photo: string;
+    reviews: number;
+    image: string;
+    category: string;
 }
