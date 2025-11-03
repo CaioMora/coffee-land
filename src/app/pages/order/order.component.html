@@ -1,8 +1,13 @@
 <div class="order-page">
   <!-- Header -->
   <div class="header">
-    <mat-icon>arrow_back</mat-icon>
+    <button class="header-actions" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
     <span class="title">Pedido</span>
+    <button class="header-actions">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
   </div>
 
  <!-- Delivery / Pickup Tabs -->
@@ -22,24 +27,16 @@
       R. Conde Juliano, 340 - Vila Humaitá
     </p>
 
-    <!-- <div class="address-buttons">
-      <button mat-stroked-button class="action-btn">
-        <mat-icon>edit_location</mat-icon> Editar Endereço
-      </button>
-      <button mat-stroked-button class="action-btn">
-        <mat-icon>note_add</mat-icon> Adicionar nota
-      </button>
-    </div> -->
   </div>
 
   <mat-divider></mat-divider>
-
+ <div class="product-info" *ngIf="coffee$ | async as coffee">
   <!-- Product -->
   <div class="product">
-    <img src="assets/cafe1.png" alt="Caffe Mocha" />
+    <img src="assets/cafe1.png" alt="coffee.name" />
     <div class="details">
-      <h4>Caffe Mocha</h4>
-      <span class="sub">Deep Foam</span>
+      <h4>{{coffee.name}}</h4>
+      <span class="sub">{{coffee.type}}</span>
     </div>
     <div class="quantity">
       <button class="quantity-button" mat-icon-button><mat-icon>remove</mat-icon></button>
@@ -62,7 +59,7 @@
     <h3>Pagamento</h3>
     <div class="row">
       <span>Preço</span>
-      <span>R$ 4.53</span>
+      <span>R$ {{ coffee.price }}</span>
     </div>
     <div class="row">
       <span>Taxa de entrega</span>
@@ -72,7 +69,7 @@
       </div>
     </div>
   </div>  
-  <!-- Order Button -->
+  </div>
   <div class="order-btn-container">
     <div class="payment-method">
       <!-- <div class="header-row">

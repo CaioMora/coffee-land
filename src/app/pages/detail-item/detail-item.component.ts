@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
 import { CoffeeViewModel } from '../../viewModels/coffee-viewmodel';
@@ -29,6 +28,10 @@ export class DetailItemComponent {
 
   ngOnInit(): void {
     this.vm.loadData(); // garante que está carregado caso entre direto
+  }
+
+  onBuy(id: number) {
+    this.router.navigate(['/order', id])
   }
 
   goBack() {

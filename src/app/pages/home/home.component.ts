@@ -5,6 +5,7 @@ import { sharedImports } from '../../services/shared/shared-imports';
 import { AsyncPipe, NgForOf } from '@angular/common';
 import { CoffeeViewModel } from '../../viewModels/coffee-viewmodel';
 import { Router } from '@angular/router';
+import { CategoriesComponent } from '../../components/categories/categories.component';
 
 @Component({
   selector: 'app-home',
@@ -13,21 +14,27 @@ import { Router } from '@angular/router';
     sharedImports,
     AsyncPipe, 
     NgForOf, 
-    BannerComponent],
+    BannerComponent,
+    CategoriesComponent],
   providers: [CoffeeService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 
-  coffees$ = this.vm.coffees$;
+  coffees$ = this.vm.filteredCoffees$;
   banners$ = this.vm.banners$;
   categories$ = this.vm.categories$;
+  selectedCategory$ = this.vm.selectedCategory$;
 
   constructor(private vm: CoffeeViewModel, private router: Router) {}
 
   ngOnInit(): void {
     this.vm.loadData();
+  }
+
+  onCategorySelected(category: string | null) {
+    this.vm.setSelectedCategory(category)
   }
 
   goToDetail(id: number) {

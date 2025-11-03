@@ -15,23 +15,18 @@ $font-family: "Sora", sans-serif;
 
 .home-half-screen {
     background-color: #2e2e2e;
+    height: 220px;
     font-family: $font-family;
-    padding: 10px;
-    position: fixed;       
-    top: 0;                
-    left: 0;               
-    width: 100%;          
-    z-index: 1000; 
+    padding: 24px;
     // 🔝 Header
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .location {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex: 1;
       .location-icon {
         color: $color-muted;
         font-size: 20px;
@@ -77,6 +72,7 @@ $font-family: "Sora", sans-serif;
       background: #A2A2A2;
       height: 20px;
       color: $color-white;
+      font-family: $font-family;
     }
 
     .filter-btn {
@@ -88,17 +84,25 @@ $font-family: "Sora", sans-serif;
     color: $color-white;
     }
   }
+   // 🏷️ Banner promocional
+  .promo-banner-component {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
 }
 
 // 🏠 Container principal
 .home-container {
   background: $color-bg;
   min-height: 100vh;
-  padding: 24px 24px 24px 24px;
+  padding: 70px 24px 90px 24px;
   display: flex;
   flex-direction: column;
   font-family: $font-family;
   align-items: center;
+  position: relative;
 
   // ☕ Categorias
   .categories {
@@ -132,7 +136,7 @@ $font-family: "Sora", sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.8rem;
-
+    width: 100%;
     .coffee-card {
       background: $color-white;
       border-radius: $radius;

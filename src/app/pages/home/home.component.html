@@ -1,4 +1,4 @@
-<div class="home-half-screen">
+  <div class="home-half-screen">
   <header class="header">
     <div class="location">
       <h2>São Paulo, Brasil</h2>
@@ -8,14 +8,21 @@
       <i class="fa-solid fa-bars"></i>
     </button>
   </header>
-</div>
-<div class="home-container">
-  <!-- Categories -->
-  <!-- <app-category-card  [categories]="categories" [selectedCategory]="selectedCategory"></app-category-card> -->
-
+  <div class="search-section">
+    <input type="text" class="search-input" placeholder="O que vai pedir hoje?" />
+  </div>
   <div class="promo-banner-component">
      <app-banner [banners]="banners$ | async"></app-banner>
   </div>
+</div>
+<div class="home-container">
+  <!-- Categories -->
+  <app-categories
+    *ngIf="categories$ | async as categories"
+    [categories]="categories"
+    [selectedCategory]="(selectedCategory$ | async) ?? null"
+    (categorySelected)="onCategorySelected($event)">
+  </app-categories>
 
   <!-- Coffee Grid -->
   <div class="coffee-grid" *ngIf="coffees$ | async as coffees">
@@ -41,7 +48,7 @@
 
   <!-- Bottom Nav -->
   <nav class="bottom-nav">
-    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="house_none"></mat-icon>
+    <mat-icon class="icon-bottom-nav active" aria-hidden="false" aria-label="pesquisar" fontIcon="house_none"></mat-icon>
     <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="favorite_none"></mat-icon>
     <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="shopping_bag_none"></mat-icon>
     <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="notifications_none"></mat-icon>

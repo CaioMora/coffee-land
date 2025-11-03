@@ -17,12 +17,14 @@ $color-white: #fff;
   color: #2d2d2d;
 
   .header {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; // centraliza o conteúdo (span)
-    padding: 24px 0px 24px 0px;
-
+    justify-content: space-between;
+    margin: 24px 0px 24px 0px;
+    .header-actions {
+      border: none;
+      background: none;
+    }
 
     .title {
       font-weight: 600;
@@ -30,21 +32,11 @@ $color-white: #fff;
     }
 
     mat-icon {
-      position: absolute;
-      left: 1.2rem; // fixa o ícone à esquerda
       font-size: 24px;
       color: #444;
       cursor: pointer;
     }
   }
-
-//  .custom-tabs-wrapper {
-//   mat-tab-group {
-//     mat-tab {
-
-//     }
-//   }
-//  }
 
 
   .delivery-options {
@@ -107,7 +99,8 @@ $color-white: #fff;
     border-top-color: #eee;
   }
 
-  .product {
+  .product-info {
+    .product {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -201,6 +194,7 @@ $color-white: #fff;
         color: #bbb;
         margin-right: 5px;
       }
+     }
     }
   }
 

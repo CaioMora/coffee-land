@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, tap } from 'rxjs';
 import { CoffeeService } from '../services/coffee.service';
 import { Coffee } from '../models/coffees';
 import { Banner } from '../models/banners';
@@ -10,10 +10,23 @@ export class CoffeeViewModel {
   private coffeesSubject = new BehaviorSubject<Coffee[] | null>(null);
   private bannersSubject = new BehaviorSubject<Banner[] | null>(null);
   private categoriesSubject = new BehaviorSubject<Category[] | null>(null);
+  private selectedCategorySubject = new BehaviorSubject<string | null>(null);
 
   coffees$ = this.coffeesSubject.asObservable();
   banners$ = this.bannersSubject.asObservable();
   categories$ = this.categoriesSubject.asObservable();
+  selectedCategory$ = this.selectedCategorySubject.asObservable();
+
+  filteredCoffees$ = combineLatest([
+    this.coffees$,
+    this.selectedCategory$
+  ]).pipe(
+    map(([coffees, category]) => {
+      if(!coffees) return [];
+      if(!category) return coffees;
+      return coffees.filter(c => c.category === category);
+    })
+  )
 
   private loaded = false;
 
@@ -36,5 +49,9 @@ export class CoffeeViewModel {
         })
       )
       .subscribe();
+  }
+
+  setSelectedCategory(category: string | null): void {
+    this.selectedCategorySubject.next(category)
   }
 }

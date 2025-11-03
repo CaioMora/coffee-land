@@ -1,44 +1,51 @@
+$color-bg: #f8f7f4;
+$color-primary: #C67C4E;
+$color-accent: #C67C4E;
+$color-text: #333;
+$color-muted: #A2A2A2;
+$color-white: #fff;
+$radius: 16px;
+$font-family: "Sora", sans-serif;
+
+
 .category-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch; /* Suavidade no mobile */
+  max-width: 100vw; /* Limita à largura da viewport */
+  box-sizing: border-box; /* Inclui padding na largura */
+  padding: 0 16px; /* Espaço lateral opcional */
+
+
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      color: $color-text;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: $color-primary;
+        color: $color-white;
+      }
+
+      &:hover {
+        background-color: #EDD6C8;
+        color: #C67C4E;
+        border: none;
+        outline: solid 1px #C67C4E;
+      }
+    }
 }
 
-.category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  background: #f2f2f2;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    margin-bottom: 0.25rem;
-  }
-
-  span {
-    font-size: 0.75rem;
-    text-align: center;
-    color: #333;
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  &.active {
-    background-color: #ffe0b2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transform: translateY(-2px);
-  }
+.category-container::-webkit-scrollbar {
+  display: none; /* Oculta scrollbar no Chrome, Safari */
 }

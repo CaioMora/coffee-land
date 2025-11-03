@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Banner } from '../../models/banners';
 import { sharedImports } from '../../services/shared/shared-imports';
 import { animate, style, transition, trigger } from '@angular/animations';

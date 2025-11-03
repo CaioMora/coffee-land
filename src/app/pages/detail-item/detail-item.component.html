@@ -4,7 +4,7 @@
     <button class="header-actions" (click)="goBack()">
       <mat-icon>arrow_back</mat-icon>
     </button>
-    <span class="title">Detail</span>
+    <span class="title">Detalhes</span>
     <button class="header-actions">
       <mat-icon>favorite_border</mat-icon>
     </button>
@@ -57,7 +57,7 @@
         <span class="label">Preço</span>
         <h2>R$ {{coffee.price}}</h2>
       </div>
-      <button mat-flat-button color="primary" class="buy-btn">Comprar</button>
+      <button mat-flat-button color="primary" class="buy-btn" (click)="onBuy(coffee.id)">Comprar</button>
     </div>
   </div>
 </div>
