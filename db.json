@@ -108,5 +108,21 @@
     "rating": 4.4,
     "reviews": 12
   }
+  ],
+  "coupons": [
+  {
+    "id": 1,
+    "code": "ARABICA10",
+    "description": "10% de desconto em cafés Arábica",
+    "discountPercentage": 10,
+    "appliesTo": [1, 2, 5, 8]
+  },
+  {
+    "id": 2,
+    "code": "ROBUSTA5",
+    "description": "5% de desconto em cafés Robusta",
+    "discountPercentage": 5,
+    "appliesTo": [3, 4]
+  }
 ]
 }

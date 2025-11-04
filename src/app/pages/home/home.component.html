@@ -1,22 +1,25 @@
-  <div class="home-half-screen">
+<div class="home-half-screen">
   <header class="header">
     <div class="location">
       <h2>São Paulo, Brasil</h2>
-      <mat-icon class="location-icon" fontIcon="keyboard_arrow_down"></mat-icon>  
+      <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
     </div>
     <button class="menu-btn">
       <i class="fa-solid fa-bars"></i>
     </button>
   </header>
+
   <div class="search-section">
     <input type="text" class="search-input" placeholder="O que vai pedir hoje?" />
   </div>
+
   <div class="promo-banner-component">
-     <app-banner [banners]="banners$ | async"></app-banner>
+    <app-banner [banners]="banners$ | async"></app-banner>
   </div>
 </div>
+
 <div class="home-container">
-  <!-- Categories -->
+  <!-- Categorias -->
   <app-categories
     *ngIf="categories$ | async as categories"
     [categories]="categories"
@@ -24,12 +27,12 @@
     (categorySelected)="onCategorySelected($event)">
   </app-categories>
 
-  <!-- Coffee Grid -->
-  <div class="coffee-grid" *ngIf="coffees$ | async as coffees">
+  <!-- Lista de cafés -->
+  <div class="coffee-grid" *ngIf="coffees$ | async as coffees; else loading">
     <div class="coffee-card" *ngFor="let coffee of coffees">
       <div class="image-container">
         <img [src]="coffee.image" [alt]="coffee.name" />
-        <span class="rating">⭐ {{coffee.rating}}</span>
+        <span class="rating">⭐ {{ coffee.rating }}</span>
       </div>
       <div class="details">
         <h4>{{ coffee.name }}</h4>
@@ -42,15 +45,17 @@
     </div>
   </div>
 
-  <section *ngIf="!(coffees$ | async)">
-    <p>carregando cafés...</p>
-  </section>
+  <ng-template #loading>
+    <section class="loading">
+      <p>Carregando cafés...</p>
+    </section>
+  </ng-template>
 
-  <!-- Bottom Nav -->
+  <!-- Navegação inferior -->
   <nav class="bottom-nav">
-    <mat-icon class="icon-bottom-nav active" aria-hidden="false" aria-label="pesquisar" fontIcon="house_none"></mat-icon>
-    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="favorite_none"></mat-icon>
-    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="shopping_bag_none"></mat-icon>
-    <mat-icon class="icon-bottom-nav" aria-hidden="false" aria-label="pesquisar" fontIcon="notifications_none"></mat-icon>
+    <mat-icon class="active" fontIcon="house_none"></mat-icon>
+    <mat-icon fontIcon="favorite_none"></mat-icon>
+    <mat-icon fontIcon="shopping_bag_none"></mat-icon>
+    <mat-icon fontIcon="notifications_none"></mat-icon>
   </nav>
 </div>

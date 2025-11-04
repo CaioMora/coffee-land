@@ -24,14 +24,33 @@ export class DetailItemComponent {
     )
   );
 
+  selectedSize: 'P' | 'M' | 'G' = 'M';
+  finalPrice = 0;
+
   constructor(private router: Router, private route: ActivatedRoute, private vm: CoffeeViewModel) {}
 
   ngOnInit(): void {
-    this.vm.loadData(); // garante que está carregado caso entre direto
+    this.vm.loadData();
+     this.coffee$.subscribe(coffee => {
+      if (coffee) {
+        this.finalPrice = coffee.price; 
+      }
+    });
   }
 
-  onBuy(id: number) {
-    this.router.navigate(['/order', id])
+  selectSize(size: 'P' | 'M' | 'G', basePrice: number) {
+    this.selectedSize = size;
+    this.finalPrice = size === 'P' ? basePrice : size === 'M' ? basePrice * 1.2 : basePrice * 1.4;
+  }
+
+  onBuy(coffee: any) {
+    const orderData = {
+      coffeeId: coffee.id,
+      coffeeName: coffee.name,
+      size: this.selectedSize,
+      price: this.finalPrice
+    };
+    this.router.navigate(['/order', coffee.id], { state: { orderData } });
   }
 
   goBack() {

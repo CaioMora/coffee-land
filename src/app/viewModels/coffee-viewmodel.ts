@@ -4,6 +4,7 @@ import { CoffeeService } from '../services/coffee.service';
 import { Coffee } from '../models/coffees';
 import { Banner } from '../models/banners';
 import { Category } from '../models/category';
+import { Coupon } from '../models/coupon';
 
 @Injectable({ providedIn: 'root' })
 export class CoffeeViewModel {
@@ -11,10 +12,12 @@ export class CoffeeViewModel {
   private bannersSubject = new BehaviorSubject<Banner[] | null>(null);
   private categoriesSubject = new BehaviorSubject<Category[] | null>(null);
   private selectedCategorySubject = new BehaviorSubject<string | null>(null);
+  private couponsSubject = new BehaviorSubject<Coupon[] | null>(null);
 
   coffees$ = this.coffeesSubject.asObservable();
   banners$ = this.bannersSubject.asObservable();
   categories$ = this.categoriesSubject.asObservable();
+  coupons$ = this.couponsSubject.asObservable();
   selectedCategory$ = this.selectedCategorySubject.asObservable();
 
   filteredCoffees$ = combineLatest([
@@ -38,14 +41,17 @@ export class CoffeeViewModel {
     combineLatest([
       this.coffeeService.getCoffees(),
       this.coffeeService.getBanners(),
-      this.coffeeService.getCategories()
+      this.coffeeService.getCategories(),
+      this.coffeeService.getCoupons()
     ])
       .pipe(
-        tap(([coffees, banners, categories]) => {
+        tap(([coffees, banners, categories, coupons]) => {
           this.coffeesSubject.next(coffees);
           this.bannersSubject.next(banners);
           this.categoriesSubject.next(categories);
+          this.couponsSubject.next(coupons);
           this.loaded = true;
+          console.log(coffees, banners, categories)
         })
       )
       .subscribe();
