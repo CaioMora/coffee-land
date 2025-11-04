@@ -13,92 +13,116 @@
       "image": "/assets/banners/primavera.jpg"
     }
   ],
-   "categories": [
-    { "name": "Arábica", "image": "/assets/categories/arabica.png" },
-    { "name": "Robusta", "image": "/assets/categories/robusta.png" },
-    { "name": "Liberica", "image": "/assets/categories/liberica.png" },
-    { "name": "Excelsa", "image": "/assets/categories/excelsa.png" }
+  "categories": [
+    { "name": "Arábica" },
+    { "name": "Robusta" },
+    { "name": "Liberica" },
+    { "name": "Excelsa" }
   ],
-  "coffees": [
-    {
-      "id": 1,
-      "name": "Caffe Mocha",
-      "type": "Espresso",
-      "category": "Arábica",
-      "price": 4.53,
-      "image": "/assets/cafe1.png",
-      "rating": 4.5,
-      "reviews": 20
-    },
-    {
-      "id": 2,
-      "name": "Flat White",
-      "type": "Espresso",
-      "category": "Arábica",
-      "price": 3.53,
-      "image": "/assets/cafe2.png",
-      "rating": 4.2,
-      "reviews": 15
-    },
-    {
-      "id": 3,
-      "name": "Ristretto",
-      "type": "Espresso Forte",
-      "category": "Robusta",
-      "price": 5.00,
-      "image": "/assets/cafe3.png",
-      "rating": 4.7,
-      "reviews": 10
-    },
-    {
-      "id": 4,
-      "name": "Americano",
-      "type": "Filtro",
-      "category": "Robusta",
-      "price": 3.00,
-      "image": "/assets/cafe4.png",
-      "rating": 4.0,
-      "reviews": 8
-    },
-    {
-      "id": 5,
-      "name": "Café Geisha",
-      "type": "Especial",
-      "category": "Arábica",
-      "price": 6.50,
-      "image": "/assets/cafe1.png",
-      "rating": 5.0,
-      "reviews": 5
-    },
-    {
-      "id": 6,
-      "name": "Café Liberica",
-      "type": "Especial",
-      "category": "Liberica",
-      "price": 6.00,
-      "image": "/assets/cafe2.png",
-      "rating": 4.8,
-      "reviews": 7
-    },
-    {
-      "id": 7,
-      "name": "Café Excelsa",
-      "type": "Exótico",
-      "category": "Excelsa",
-      "price": 5.80,
-      "image": "/assets/cafe3.png",
-      "rating": 4.6,
-      "reviews": 6
-    },
-    {
-      "id": 8,
-      "name": "Café Bourbon",
-      "type": "Tradicional",
-      "category": "Arábica",
-      "price": 4.90,
-      "image": "/assets/cafe4.png",
-      "rating": 4.4,
-      "reviews": 12
-    }
-  ]
+   "coffees": [
+  {
+    "id": 1,
+    "name": "Caffe Mocha",
+    "type": "Espresso",
+    "category": "Arábica",
+    "description": "Preparado com uma dose de espresso encorpado, leite vaporizado e calda de chocolate. Finalizado com espuma de leite e, às vezes, chantilly. Ideal para quem aprecia café com toque doce e cremoso.",
+    "price": 4.53,
+    "image": "/assets/cafe1.png",
+    "rating": 4.5,
+    "reviews": 20
+  },
+  {
+    "id": 2,
+    "name": "Flat White",
+    "type": "Espresso Suave",
+    "category": "Arábica",
+    "description": "Feito com uma dose de espresso suave e uma camada fina de leite vaporizado com microespuma. A textura é sedosa e o sabor equilibrado, ideal para quem prefere menos espuma que um cappuccino.",
+    "price": 3.53,
+    "image": "/assets/cafe2.png",
+    "rating": 4.2,
+    "reviews": 15
+  },
+  {
+    "id": 3,
+    "name": "Ristretto",
+    "type": "Espresso Forte",
+    "category": "Robusta",
+    "description": "Extraído com menos água que o espresso tradicional, o ristretto é mais concentrado e encorpado. Possui sabor intenso e amargor acentuado, ideal para quem busca potência em cada gole.",
+    "price": 5.00,
+    "image": "/assets/cafe3.png",
+    "rating": 4.7,
+    "reviews": 10
+  },
+  {
+    "id": 4,
+    "name": "Americano",
+    "type": "Filtro",
+    "category": "Robusta",
+    "description": "Feito adicionando água quente a uma dose de espresso, resultando em um café mais suave e diluído. É semelhante ao café filtrado, com sabor leve e aroma delicado.",
+    "price": 3.00,
+    "image": "/assets/cafe4.png",
+    "rating": 4.0,
+    "reviews": 8
+  },
+  {
+    "id": 5,
+    "name": "Café Geisha",
+    "type": "Especial",
+    "category": "Arábica",
+    "description": "Cultivado em altitudes elevadas, o Geisha é preparado geralmente por métodos filtrados como V60 ou Chemex para preservar suas notas florais e frutadas. É conhecido por sua doçura natural e complexidade aromática.",
+    "price": 6.50,
+    "image": "/assets/cafe1.png",
+    "rating": 5.0,
+    "reviews": 5
+  },
+  {
+    "id": 6,
+    "name": "Café Liberica",
+    "type": "Especial",
+    "category": "Liberica",
+    "description": "Com grãos maiores e formato distinto, o Liberica é preparado por infusão ou prensa francesa para realçar seu perfil frutado, com notas de madeira e flores. Ideal para quem busca sabores exóticos.",
+    "price": 6.00,
+    "image": "/assets/cafe2.png",
+    "rating": 4.8,
+    "reviews": 7
+  },
+  {
+    "id": 7,
+    "name": "Café Excelsa",
+    "type": "Exótico",
+    "category": "Excelsa",
+    "description": "Geralmente preparado por métodos artesanais como prensa francesa ou cold brew, o Excelsa oferece aroma intenso e notas frutadas exóticas, com acidez marcante e corpo médio.",
+    "price": 5.80,
+    "image": "/assets/cafe3.png",
+    "rating": 4.6,
+    "reviews": 6
+  },
+  {
+    "id": 8,
+    "name": "Café Bourbon",
+    "type": "Tradicional",
+    "category": "Arábica",
+    "description": "Cultivado em regiões de altitude média, o Bourbon é preparado por métodos filtrados para destacar seu equilíbrio entre corpo e acidez. Possui sabor suave, final doce e aroma agradável.",
+    "price": 4.90,
+    "image": "/assets/cafe4.png",
+    "rating": 4.4,
+    "reviews": 12
+  }
+  ],
+  "coupons": [
+  {
+    "id": 1,
+    "code": "ARABICA10",
+    "description": "10% de desconto em cafés Arábica",
+    "discountPercentage": 10,
+    "appliesTo": [1, 2, 5, 8]
+  },
+  {
+    "id": 2,
+    "code": "ROBUSTA5",
+    "description": "5% de desconto em cafés Robusta",
+    "discountPercentage": 5,
+    "appliesTo": [3, 4]
+  }
+]
 }

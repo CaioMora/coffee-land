@@ -4,14 +4,14 @@
     <button class="header-actions" (click)="goBack()">
       <mat-icon>arrow_back</mat-icon>
     </button>
-    <span class="title">Detail</span>
+    <span class="title">Detalhes</span>
     <button class="header-actions">
       <mat-icon>favorite_border</mat-icon>
     </button>
   </div>
 
 
-  <div class="produt-info" *ngIf="coffee$ | async as coffee">
+  <div class="produt-info" *ngIf="coffee$ | async as coffee; else loading">
     <div class="image-container">
       <img [src]="coffee.image" [alt]="coffee.name" />
     </div>
@@ -44,20 +44,48 @@
     </div>
 
     <div class="size">
-      <h3>Size</h3>
+      <h3>Tamanho</h3>
       <div class="options">
-        <button mat-stroked-button class="size-btn">S</button>
-        <button mat-flat-button color="primary" class="size-btn selected">M</button>
-        <button mat-stroked-button class="size-btn">L</button>
+        <button
+          mat-stroked-button
+          class="size-btn selected"
+          [class.selected]="selectedSize === 'P'"
+          (click)="selectSize('P', coffee.price)"
+        >
+          P
+        </button>
+
+        <button
+          mat-stroked-button
+          class="size-btn"
+          [class.selected]="selectedSize === 'M'"
+          (click)="selectSize('M', coffee.price * 1.2)"
+        >
+          M
+        </button>
+
+        <button
+          mat-stroked-button
+          class="size-btn"
+          [class.selected]="selectedSize === 'G'"
+          (click)="selectSize('G', coffee.price * 1.4)"
+        >
+          G
+        </button>
       </div>
     </div>
 
     <div class="footer">
       <div class="price">
         <span class="label">Preço</span>
-        <h2>R$ {{coffee.price}}</h2>
+        <h2>R$ {{finalPrice | number: '1.2-2'}}</h2>
       </div>
-      <button mat-flat-button color="primary" class="buy-btn">Comprar</button>
+      <button mat-flat-button color="primary" class="buy-btn" (click)="onBuy(coffee)">Comprar</button>
     </div>
   </div>
+
+  
+<ng-template #loading>
+  <p style="text-align:center;">Carregando...</p>
+</ng-template>
 </div>

@@ -1,18 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Category } from '../../models/category';
+import { sharedImports } from '../../services/shared/shared-imports';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [],
+  imports: [sharedImports],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
 })
 export class CategoriesComponent {
-  @Input() categories: Category[] = [];
+  @Input() categories: Category[] | null = [];
   @Input() selectedCategory: string | null = null;
+  @Output() categorySelected = new EventEmitter<string>();
 
-  selectCategory(categoryName: string) {
-    this.selectedCategory = categoryName;
-  }
+  onSelectCategory(categoryName: string) {
+    this.categorySelected.emit(categoryName);
+  } 
+
+  onClearCategory() {
+    this.categorySelected.emit(); // ou 'all', se preferir
+  } 
+
+
 }

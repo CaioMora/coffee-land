@@ -1,6 +1,7 @@
 <section class="banner-container" *ngIf="banners && banners.length > 0">
   <ng-container *ngIf="banners[currentIndex] as currentBanner">
     <div class="promo-banner" [@fadeAnimation]>
+      <div class="tag">promo</div>
       <div class="banner-info">
         <h2>{{ currentBanner.title }}</h2>
         <p>{{ currentBanner.description }}</p>

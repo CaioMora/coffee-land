@@ -17,6 +17,7 @@ $radius: 16px;
     border-radius: $radius;
     padding: 1rem;
     height: 130px;
+    width: 100%;
     background: url('../../../assets/banner.png');
     background-size: cover;
     margin-bottom: 1.5rem;
@@ -29,6 +30,7 @@ $radius: 16px;
       border-radius: 8px;
       font-size: 0.7rem;
       text-transform: uppercase;
+      width: 45px;
     }
 
     h3 {
@@ -44,7 +46,7 @@ $radius: 16px;
   }
   .indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -64,7 +66,7 @@ $radius: 16px;
       }
 
       &:hover {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgb(198 124 78);
       }
     }
   }
