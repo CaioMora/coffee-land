@@ -2,15 +2,13 @@
   "banners": [
     {
       "id": 1,
-      "title": "Semana do Espresso!",
-      "description": "Aproveite 20% de desconto em todos os espressos até domingo!",
-      "image": "/assets/banners/semana-espresso.jpg"
+      "title": "promoção disponível",
+      "image": "/assets/banner1.png"
     },
     {
       "id": 2,
-      "title": "Promoção de Primavera",
-      "description": "Desconto especial nos cafés da estação!",
-      "image": "/assets/banners/primavera.jpg"
+      "title": "promoção disponível",
+      "image": "/assets/banner2.png"
     }
   ],
   "categories": [

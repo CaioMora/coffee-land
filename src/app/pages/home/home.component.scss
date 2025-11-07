@@ -15,7 +15,7 @@ $font-family: "Sora", sans-serif;
 
 .home-half-screen {
     background-color: #2e2e2e;
-    height: 220px;
+    height: 215px;
     font-family: $font-family;
     padding: 24px;
     // 🔝 Header
@@ -28,15 +28,17 @@ $font-family: "Sora", sans-serif;
       display: flex;
       align-items: center;
       .location-icon {
-        color: $color-muted;
+        color: $color-white;
         font-size: 20px;
         margin-left: 5px;
       }
       .label {
         font-size: 0.75rem;
-        color: $color-muted;
+        color: $color-white;
       }
-
+      mat-icon {
+        color: $color-white;
+      }
       h2 {
         font-size: 1rem;
         color: $color-white;

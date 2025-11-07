@@ -35,7 +35,7 @@ export class TabsComponent {
   }
 
   updateIndicator() {
-    const header = document.querySelector('app-tabs .tab-header') as HTMLElement;
+    const header = document.querySelector('.tab-header') as HTMLElement;
     if (!header) return;
 
     const labels = header.querySelectorAll('.tab-label') as unknown as HTMLElement[];

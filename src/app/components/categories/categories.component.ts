@@ -19,8 +19,7 @@ export class CategoriesComponent {
   } 
 
   onClearCategory() {
-    this.categorySelected.emit(); // ou 'all', se preferir
+    this.categorySelected.emit(undefined);
   } 
-
 
 }
