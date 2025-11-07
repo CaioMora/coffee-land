@@ -21,7 +21,7 @@ Coffee Lovers é um projeto desenvolvido em **Angular 18** com **RxJS** e **Angu
 
 ### 1️⃣ Clonar o repositório
 
-git clone https://github.com/seu-usuario/coffee-lovers.git
+git clone https://github.com/CaioMora/coffee-land.git
 cd coffee-lovers
 
 - comando: npm install
