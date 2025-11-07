@@ -17,12 +17,21 @@ import { AsyncPipe, NgForOf } from '@angular/common';
 })
 export class DetailItemComponent {
   coffee$ = this.route.paramMap.pipe(
-    switchMap(params =>
-      this.vm.coffees$.pipe(
-        map(coffees => coffees?.find(c => c.id === Number(params.get('id'))))
-      )
+  switchMap(params =>
+    this.vm.coffees$.pipe(
+      map(coffees => {
+        const id = Number(params.get('id')); // força número
+        if (!coffees) return null;
+
+        // garante comparação entre tipos diferentes (ex: '1' === 1)
+        const coffee = coffees.find(c => +c.id === id);
+        console.log('Café encontrado:', coffee);
+        return coffee ?? null;
+      })
     )
-  );
+  )
+);
+
 
   selectedSize: 'P' | 'M' | 'G' = 'M';
   finalPrice = 0;
@@ -33,6 +42,7 @@ export class DetailItemComponent {
     this.vm.loadData();
      this.coffee$.subscribe(coffee => {
       if (coffee) {
+        console.log(coffee)
         this.finalPrice = coffee.price; 
       }
     });

@@ -2,12 +2,14 @@
   <ng-container *ngIf="banners[currentIndex] as currentBanner">
     <div class="promo-banner" [@fadeAnimation]>
       <div class="tag">promo</div>
-      <div class="banner-info">
-        <h2>{{ currentBanner.title }}</h2>
-        <p>{{ currentBanner.description }}</p>
-      </div>
+      <img
+        class="banner-image"
+        [src]="currentBanner.image"
+        [alt]="currentBanner.title || 'Promoção de café'"
+      />
     </div>
   </ng-container>
+
   <div class="indicators">
     <span
       *ngFor="let banner of banners; let i = index"

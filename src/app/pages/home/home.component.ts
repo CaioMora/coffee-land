@@ -20,7 +20,7 @@ import { sharedImports } from '../../services/shared/shared-imports';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  coffees$ = this.vm.coffees$;
+  coffees$ = this.vm.filteredCoffees$;
   banners$ = this.vm.banners$;
   categories$ = this.vm.categories$;
   selectedCategory$ = this.vm.selectedCategory$; // mantém estado reativo centralizado
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/detail-item', id]);
   }
 
-  onCategorySelected(category: string | null): void {
+  onCategorySelected(category: string | null) {
     this.vm.setSelectedCategory(category);
   }
 }

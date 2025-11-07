@@ -5,7 +5,6 @@ import { sharedImports } from '../../services/shared/shared-imports';
 import { CoffeeViewModel } from '../../viewModels/coffee-viewmodel';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest, filter, map, startWith, Subscription, switchMap } from 'rxjs';
-import { Coffee } from '../../models/coffees';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -20,21 +19,27 @@ export class OrderComponent implements OnInit, OnDestroy {
    private subs = new Subscription();
 
   coffee$ = this.route.paramMap.pipe(
-    switchMap(params =>
-      this.vm.coffees$.pipe(
-        map(coffees => coffees?.find(c => c.id === Number(params.get('id'))))
-      )
-    )
-  );
+  switchMap(params =>
+    this.vm.coffees$.pipe(
+      map(coffees => {
+        const id = Number(params.get('id')); // força número
+        if (!coffees) return null;
 
+        // garante comparação entre tipos diferentes (ex: '1' === 1)
+        const coffee = coffees.find(c => +c.id === id);
+        return coffee ?? null;
+      })
+    )
+  )
+);
   
-coupon$ = combineLatest([this.coffee$, this.vm.coupons$]).pipe(
+  coupon$ = combineLatest([this.coffee$, this.vm.coupons$]).pipe(
     map(([coffee, coupons]) => {
-      if (!coffee || !coupons) return null;
-      return coupons.find(c => c.appliesTo.includes(coffee.id)) ?? null;
+      if (!coffee || !coupons?.length) return null;
+      return coupons.find(c => c.appliesTo.some(id => +id === +coffee.id)) ?? null;
     }),
     startWith(null)
-);
+  );
 
   constructor(
     private router: Router, 
@@ -45,7 +50,7 @@ coupon$ = combineLatest([this.coffee$, this.vm.coupons$]).pipe(
 
   ngOnInit(): void {
     const navState = history.state;
-    console.log(navState.orderData)
+    console.log('navState', navState.orderData)
 
     // inicialize unitPrice com o price vindo do navState (que já vinha do detail com tamanho aplicado)
     this.orderForm = this.fb.group({
